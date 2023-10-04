@@ -1,3 +1,7 @@
 #!/bin/bash
 
-ln -sfn ../hypr/ ~/.config/
+
+DIR=$(pwd)
+
+
+ln -sfn $DIR/hypr/ ~/.config/hypr
