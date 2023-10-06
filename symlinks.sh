@@ -1,12 +1,12 @@
 #!/bin/bash
 
-
+echo "$USER"
 # The directory where configs repo resides
 DIR=$(pwd)
-SCRIPTDIR=~/.scripts
+SCRIPTDIR=$HOME/.scripts
 
 # Hyprland symlink
-HYPRCONFIG=~/.config/hypr
+HYPRCONFIG=$HOME/.config/hypr
 
 if [ -d $HYPRCONFIG ]; then
 	if [ -L $HYPRCONFIG ]; then
@@ -18,12 +18,11 @@ if [ -d $HYPRCONFIG ]; then
 	fi
 fi
 
+ln -sfn $DIR/hypr/ $HOME/.config/
 echo "Creating Hyprland symlink."
-ln -sfn $DIR/hypr/ ~/.config/
-
 
 # Waybar symlink
-WAYBARDIR=~/.config/waybar
+WAYBARDIR=$HOME/.config/waybar
 
 if [ -d $WAYBARDIR ]; then
 	if [ -L $WAYBARDIR ]; then
@@ -36,7 +35,7 @@ if [ -d $WAYBARDIR ]; then
 fi
 
 echo "Creating Waybar symlink."
-ln -sfn $DIR/waybar/ ~/.config/
+ln -sfn $DIR/waybar/ $HOME/.config/
 
 # swww Startup Script symlink
 SWWW=$SCRIPTDIR/swww_startup.sh
@@ -51,3 +50,22 @@ if [ ! -L $SWWW ]; then
 	ln -s $DIR/swww/swww_startup.sh $SWWW
 	echo "Created swww symlink!" 
 fi
+
+# greetd Config symlink
+# needs to run in sudo
+# Using this has a placeholder for now but need to figure out a more intuitive way of doing this
+GREETD=/etc/greetd
+
+
+if [ -d $GREETD ]; then
+	if [ -L $GREETD ]; then
+		echo "Existing greetd config link. Removing."
+		rm $GREETD
+	else
+		echo "Existing greetd directory. Removing."
+		rm -rf $GREETD
+	fi
+fi
+
+echo "Creating greetd config symlink."
+ln -sfn $DIR/greetd /etc/
