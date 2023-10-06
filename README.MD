@@ -13,5 +13,5 @@ These are the current apps installed on my system:
 - `Hyprland`: Tiling Wayland compositor [git](https://github.com/hyprwm/Hyprland) 
 - `Waybar`: Status bar [git](https://github.com/Alexays/Waybar)
 - `swww`: Wallpaper daemon for Wayland [git](https://github.com/Horus645/swww)
-- `greetd`: Minimal login manager [git] (https://github.com/kennylevinsen/greetd)
-- `tuigreet`: Graphical interface for greetd [git] (https://github.com/apognu/tuigreet)
+- `greetd`: Minimal login manager [git](https://github.com/kennylevinsen/greetd)
+- `tuigreet`: Graphical interface for greetd [git](https://github.com/apognu/tuigreet)
