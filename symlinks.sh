@@ -3,7 +3,7 @@
 
 # The directory where configs repo resides
 DIR=$(pwd)
-
+SCRIPTDIR=~/.scripts
 
 # Hyprland symlink
 HYPRCONFIG=~/.config/hypr
@@ -37,3 +37,17 @@ fi
 
 echo "Creating Waybar symlink."
 ln -sfn $DIR/waybar/ ~/.config/
+
+# swww Startup Script symlink
+SWWW=$SCRIPTDIR/swww_startup.sh
+
+
+if [ ! -d $SCRIPTDIR ]; then
+	mkdir ~/.scripts
+	echo "Created .scripts directory!"
+fi
+
+if [ ! -L $SWWW ]; then
+	ln -s $DIR/swww/swww_startup.sh $SWWW
+	echo "Created swww symlink!" 
+fi
