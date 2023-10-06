@@ -10,6 +10,6 @@ This script creates symlinks for all necessary configs and scripts so all of the
 ## Current App Stack
 These are the current apps installed on my system:
 
-- `Hyprland` [Git](https://github.com/hyprwm/Hyprland): Tiling Wayland compositor 
-- `Waybar` [Git](https://github.com/Alexays/Waybar): Status bar
-- `swww` [Git](https://github.com/Horus645/swww): Wallpaper daemon for Wayland
+- `Hyprland`: Tiling Wayland compositor [git](https://github.com/hyprwm/Hyprland) 
+- `Waybar`: Status bar [git](https://github.com/Alexays/Waybar)
+- `swww`: Wallpaper daemon for Wayland [git](https://github.com/Horus645/swww)
