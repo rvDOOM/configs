@@ -15,3 +15,6 @@ These are the current apps installed on my system:
 - `swww`: Wallpaper daemon for Wayland [git](https://github.com/Horus645/swww)
 - `greetd`: Minimal login manager [git](https://github.com/kennylevinsen/greetd)
 - `tuigreet`: Graphical interface for greetd [git](https://github.com/apognu/tuigreet)
+- `ranger`
+- `zsh`
+- `fuzzel`
