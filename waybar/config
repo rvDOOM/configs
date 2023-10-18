@@ -1,7 +1,7 @@
 [
   {
     "layer": "top",
-    "output": "HDMI-A-1",
+    "output": "DP-2",
     "position": "top",
     "mod": "dock",
     "exclusive": true,
@@ -12,136 +12,19 @@
       "clock",
       "hyprland/workspaces"
     ],
-    "modules-center": ["hyprland/window"],
+    "modules-center": [
+      "hyprland/window"
+    ],
     "modules-right": [
-        "pulseaudio"
+      "custom/updates",
+      "wireplumber"
     ],
 
-    "hyprland/window": {
-        "format": "{}"
-    },
-    "hyprland/workspace": {
+    "include": [
+      "~/.config/waybar/default_modules.json",
+    ],
+    "hyprland/workspaces": {
         "all-outputs": false,
-        "format": "{icon}",
-        "format-icons": {
-            "1": "1",
-            "2": "2",
-            "3": "3",
-            "4": "4",
-            "5": "5",
-          }
-    },
-    "custom/updates": {
-        "exec": "(yay -Qu) | wc -l",
-        "interval": 10,
-        "format": " {}"
-    },
-    "custom/weather" : {
-        "tooltip" : true,
-        "format" : "{}",
-        "restart-interval" : 300,
-        "exec" : "~/.config/waybar/scripts/waybar-wttr.py",
-        "return-type" : "json"
-    },
-    "tray": {
-        "icon-size": 12,
-        "tooltip": false,
-        "spacing": 10
-    },
-    "clock": {
-        "format": "{: %R   %m/%d}",
-        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
-    },
-    "pulseaudio": {
-        "format": "{icon} {volume}%",
-        "tooltip": false,
-        "format-muted": " Muted",
-        "on-click": "pamixer -t",
-        "on-scroll-up": "pamixer -i 5",
-        "on-scroll-down": "pamixer -d 5",
-        "scroll-step": 5,
-        "format-icons": {
-            "headphone": "",
-            "hands-free": "",
-            "headset": "",
-            "phone": "",
-            "portable": "",
-            "car": "",
-            "default": ["", "", ""]
-        }
-    },
-    "pulseaudio#microphone": {
-        "format": "{format_source}",
-        "tooltip": false,
-        "format-source": " {volume}%",
-        "format-source-muted": " Muted",
-        "on-click": "pamixer --default-source -t",
-        "on-scroll-up": "pamixer --default-source -i 5",
-        "on-scroll-down": "pamixer --default-source -d 5",
-        "scroll-step": 5
-    },
-    "battery": {
-        "states": {
-            // "good": 95,
-            "warning": 30,
-            "critical": 15
-        },
-        "format": "{capacity}% {icon}",
-        "format-charging": "{capacity}% ",
-        "format-plugged": "{capacity}% ",
-        "format-alt": "{time} {icon}",
-        // "format-good": "", // An empty format will hide the module
-        // "format-full": "",
-        "format-icons": ["", "", "", "", ""]
-    },
-    "network": {
-        /* "interface": "wlp2s0", */
-        "format": "{ifname}",
-        "format-wifi": "{essid} ({signalStrength}%) ",
-        "format-ethernet": "{ipaddr}/{cidr} ",
-        "format-disconnected": "", //An empty format will hide the module.
-        "tooltip-format": "{ifname} via {gwaddr} ",
-        "tooltip-format-wifi": "{essid} ({signalStrength}%) ",
-        "tooltip-format-ethernet": "{ifname} ",
-        "tooltip-format-disconnected": "Disconnected",
-        "max-length": 50
-    },
-    "backlight": {
-        "device": "intel_backlight",
-        "format": "{percent}% {icon}",
-        "format-icons": ["", ""]
-    }
-    /* "battery#bat2": { */
-    /*     "bat": "BAT2" */
-    /* } */
-},
-
-{
-    "layer": "top",
-    "output": "DP-2",
-    "position": "top",
-    "mod": "dock",
-    "exclusive": true,
-    "passtrough": false,
-    "gtk-layer-shell": true,
-    "height": 0,
-    "modules-left": [
-      "clock",
-        "wlr/workspaces"
-    ],
-    "modules-center": ["hyprland/window"],
-    "modules-right": [
-        "pulseaudio"
-    ],
-
-    "hyprland/window": {
-        "format": "{}"
-    },
-    "wlr/workspaces": {
-        "on-scroll-up": "hyprctl dispatch split-workspace e+1",
-        "on-scroll-down": "hyprctl dispatch split-workspace e-1",
-        "all-outputs": false,
-        "on-click": "activate",
         "format": "{icon}",
         "format-icons": {
             "6": "1",
@@ -154,89 +37,38 @@
             "default": ""
           }
     },
-    "custom/updates": {
-        "exec": "(yay -Qu) | wc -l",
-        "interval": 10,
-        "format": " {}"
-    },
-    "custom/weather" : {
-        "tooltip" : true,
-        "format" : "{}",
-        "restart-interval" : 300,
-        "exec" : "~/.config/waybar/scripts/waybar-wttr.py",
-        "return-type" : "json"
-    },
-    "tray": {
-        "icon-size": 12,
-        "tooltip": false,
-        "spacing": 10
-    },
-    "clock": {
-        "format": "{: %R   %m/%d}",
-        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
-    },
-    "pulseaudio": {
-        "format": "{icon} {volume}%",
-        "tooltip": false,
-        "format-muted": " Muted",
-        "on-click": "pamixer -t",
-        "on-scroll-up": "pamixer -i 5",
-        "on-scroll-down": "pamixer -d 5",
-        "scroll-step": 5,
+},
+
+{
+    "layer": "top",
+    "output": "HDMI-A-1",
+    "position": "top",
+    "mod": "dock",
+    "exclusive": true,
+    "passtrough": false,
+    "gtk-layer-shell": true,
+    "height": 0,
+    "modules-left": [
+        "hyprland/workspaces"
+    ],
+    "modules-center": ["hyprland/window"],
+    "modules-right": [
+    ],
+    "hyprland/workspaces": {
+        "all-outputs": false,
+        "on-click": "activate",
+        "format": "{icon}",
         "format-icons": {
-            "headphone": "",
-            "hands-free": "",
-            "headset": "",
-            "phone": "",
-            "portable": "",
-            "car": "",
-            "default": ["", "", ""]
-        }
+            "1": "1",
+            "2": "2",
+            "3": "3",
+            "4": "4",
+            "5": "5",
+            "urgent": "",
+            "active": "",
+            "default": ""
+          }
     },
-    "pulseaudio#microphone": {
-        "format": "{format_source}",
-        "tooltip": false,
-        "format-source": " {volume}%",
-        "format-source-muted": " Muted",
-        "on-click": "pamixer --default-source -t",
-        "on-scroll-up": "pamixer --default-source -i 5",
-        "on-scroll-down": "pamixer --default-source -d 5",
-        "scroll-step": 5
-    },
-    "battery": {
-        "states": {
-            // "good": 95,
-            "warning": 30,
-            "critical": 15
-        },
-        "format": "{capacity}% {icon}",
-        "format-charging": "{capacity}% ",
-        "format-plugged": "{capacity}% ",
-        "format-alt": "{time} {icon}",
-        // "format-good": "", // An empty format will hide the module
-        // "format-full": "",
-        "format-icons": ["", "", "", "", ""]
-    },
-    "network": {
-        /* "interface": "wlp2s0", */
-        "format": "{ifname}",
-        "format-wifi": "{essid} ({signalStrength}%) ",
-        "format-ethernet": "{ipaddr}/{cidr} ",
-        "format-disconnected": "", //An empty format will hide the module.
-        "tooltip-format": "{ifname} via {gwaddr} ",
-        "tooltip-format-wifi": "{essid} ({signalStrength}%) ",
-        "tooltip-format-ethernet": "{ifname} ",
-        "tooltip-format-disconnected": "Disconnected",
-        "max-length": 50
-    },
-    "backlight": {
-        "device": "intel_backlight",
-        "format": "{percent}% {icon}",
-        "format-icons": ["", ""]
-    }
-    /* "battery#bat2": { */
-    /*     "bat": "BAT2" */
-    /* } */
 },
 
 
@@ -250,18 +82,12 @@
     "gtk-layer-shell": true,
     "height": 0,
     "modules-left": [
-      "clock",
-        "wlr/workspaces"
+        "hyprland/workspaces"
     ],
     "modules-center": ["hyprland/window"],
     "modules-right": [
-        "pulseaudio"
     ],
-
-    "hyprland/window": {
-        "format": "{}"
-    },
-    "wlr/workspaces": {
+    "hyprland/workspaces": {
         "all-outputs": false,
         "format": "{icon}",
         "format-icons": {
@@ -275,88 +101,5 @@
             "default": ""
           }
     },
-    "custom/updates": {
-        "exec": "(yay -Qu) | wc -l",
-        "interval": 10,
-        "format": " {}"
-    },
-    "custom/weather" : {
-        "tooltip" : true,
-        "format" : "{}",
-        "restart-interval" : 300,
-        "exec" : "~/.config/waybar/scripts/waybar-wttr.py",
-        "return-type" : "json"
-    },
-    "tray": {
-        "icon-size": 12,
-        "tooltip": false,
-        "spacing": 10
-    },
-    "clock": {
-        "format": "{: %R   %m/%d}",
-        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
-    },
-    "pulseaudio": {
-        "format": "{icon} {volume}%",
-        "tooltip": false,
-        "format-muted": " Muted",
-        "on-click": "pamixer -t",
-        "on-scroll-up": "pamixer -i 5",
-        "on-scroll-down": "pamixer -d 5",
-        "scroll-step": 5,
-        "format-icons": {
-            "headphone": "",
-            "hands-free": "",
-            "headset": "",
-            "phone": "",
-            "portable": "",
-            "car": "",
-            "default": ["", "", ""]
-        }
-    },
-    "pulseaudio#microphone": {
-        "format": "{format_source}",
-        "tooltip": false,
-        "format-source": " {volume}%",
-        "format-source-muted": " Muted",
-        "on-click": "pamixer --default-source -t",
-        "on-scroll-up": "pamixer --default-source -i 5",
-        "on-scroll-down": "pamixer --default-source -d 5",
-        "scroll-step": 5
-    },
-    "battery": {
-        "states": {
-            // "good": 95,
-            "warning": 30,
-            "critical": 15
-        },
-        "format": "{capacity}% {icon}",
-        "format-charging": "{capacity}% ",
-        "format-plugged": "{capacity}% ",
-        "format-alt": "{time} {icon}",
-        // "format-good": "", // An empty format will hide the module
-        // "format-full": "",
-        "format-icons": ["", "", "", "", ""]
-    },
-    "network": {
-        /* "interface": "wlp2s0", */
-        "format": "{ifname}",
-        "format-wifi": "{essid} ({signalStrength}%) ",
-        "format-ethernet": "{ipaddr}/{cidr} ",
-        "format-disconnected": "", //An empty format will hide the module.
-        "tooltip-format": "{ifname} via {gwaddr} ",
-        "tooltip-format-wifi": "{essid} ({signalStrength}%) ",
-        "tooltip-format-ethernet": "{ifname} ",
-        "tooltip-format-disconnected": "Disconnected",
-        "max-length": 50
-    },
-    "backlight": {
-        "device": "intel_backlight",
-        "format": "{percent}% {icon}",
-        "format-icons": ["", ""]
-    }
-    /* "battery#bat2": { */
-    /*     "bat": "BAT2" */
-    /* } */
 },
 ]
