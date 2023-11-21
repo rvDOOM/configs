@@ -63,6 +63,18 @@ local plugins = {
       require "custom.configs.lspconfig"
     end,
   },
+  {
+    "windwp/nvim-ts-autotag",
+    init = function()
+      require('nvim-ts-autotag').setup({
+        filetypes = { "html", "xml", "javascript"}
+      })
+    end,
+  },
+  {
+    'lervag/vimtex',
+    lazy = false
+  }
 }
 
 return plugins

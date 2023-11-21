@@ -1,25 +1,26 @@
-  {
-    "custom/updates": {
-      "exec": "(yay -Qu) | wc -l",
-      "interval": 60,
-      "format": " {}"
-    },
-    "tray": {
-      "icon-size": 12,
-      "tooltip": false,
-      "spacing": 10
-    },
-    "clock": {
-      "format": "{: %R   %m/%d}",
-      "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
-    },
-    "hyprland/window": {
-      "format": "{}"
-    },
-    "wireplumber": {
-      "format": "{volume}% {icon}",
-      "format-muted": "MUTED ",
-      "on-click": "pavucontrol",
-      "format-icons": ["", "", ""]
-    }
+{
+  "custom/updates": {
+    "exec": "(yay -Qu) | wc -l",
+    "interval": 60,
+    "format": " {}"
+  },
+  "tray": {
+    "icon-size": 15,
+    "tooltip": false,
+    "spacing": 10,
+    "show-passive-icons": true
+  },
+  "clock": {
+    "format": "{: %R   %m/%d}",
+    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+  },
+  "hyprland/window": {
+    "format": "{}"
+  },
+  "wireplumber": {
+    "format": "{volume}% {icon}",
+    "format-muted": "MUTED ",
+    "on-click": "pavucontrol",
+    "format-icons": ["", "", ""]
+  }
 }

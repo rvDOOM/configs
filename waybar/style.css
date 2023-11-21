@@ -1,37 +1,31 @@
 * {
   border: none;
   border-radius: 0;
-  font-family: Cartograph CF Nerd Font, monospace;
+  font-family:
+    Cartograph CF Nerd Font,
+    monospace;
   font-weight: bold;
   font-size: 12px;
-  min-height: 0;
+  min-height: 22px;
 }
 
 window#waybar {
-  background: rgba(21, 18, 27, 0);
-  color: #cdd6f4;
-}
-
-tooltip {
-  background: #1e1e2e;
-  border-radius: 10px;
-  border-width: 2px;
-  border-style: solid;
-  border-color: #11111b;
+  background: transparent;
+  color: black;
 }
 
 #workspaces button {
   padding: 5px;
-  color: #a6adc8;
+  color: white;
   margin-right: 5px;
 }
 
 #workspaces button.active {
-  color: #a6adc8;
+  color: white;
 }
 
 #workspaces button.focused {
-  color: #a6adc8;
+  color: white;
   background: #eba0ac;
   border-radius: 10px;
 }
@@ -44,7 +38,7 @@ tooltip {
 
 #workspaces button:hover {
   background: #11111b;
-  color: #cdd6f4;
+  color: white;
   border-radius: 10px;
 }
 
@@ -60,19 +54,19 @@ tooltip {
 #workspaces,
 #tray,
 #backlight {
-  background: #1e1e2e;
-  padding: 0px 10px;
-  margin: 3px 0px;
-  margin-top: 5px;
+  background: white;
+  padding: 2px 15px 2px 15px;
+  margin-top: 0px;
+  border-color: black;
+  border-style: solid;
+  border-width: 1px 0px 1px 0px;
 }
 
 #tray {
-  border-radius: 10px;
-  margin-right: 10px;
+  border-left-width: 1px;
 }
 
 #workspaces {
-  background: #1e1e2e;
   border-radius: 10px;
   margin-left: 10px;
   padding-right: 0px;
@@ -93,23 +87,24 @@ tooltip {
 }
 
 #custom-updates {
-  color: #f5c2e7;
-  border-left: 0px;
-  border-right: 0px;
-  border-radius: 10px 0px 0px 10px;
+  color: black;
+  border-left-width: 1px;
+  border-style: solid;
 }
 
 #window {
-  border-radius: 10px;
+  border-style: solid;
+  border-right-width: 1px;
+  border-left-width: 1px;
   margin-left: 60px;
   margin-right: 60px;
 }
 
 #clock {
-  color: #fab387;
-  border-radius: 10px 10px 10px 10px;
-  margin-left: 5px;
-  border-right: 0px;
+  color: black;
+  border-right-width: 1px;
+  border-left-width: 1px;
+  border-style: solid;
 }
 
 #network {
@@ -119,25 +114,18 @@ tooltip {
 }
 
 #wireplumber {
-  color: #89b4fa;
-  border-left: 0px;
-  border-right: 0px;
-  border-radius: 0px 10px 10px 0px;
-  margin-right: 5px;
+  color: black;
+  border-left-width: 1px;
 }
 
 #wireplumber.muted {
-  color: #cba6f7;
-  margin-right: 5px;
-  border-left: 0px;
-  border-right: 0px;
+  color: red;
 }
 
 #battery {
   color: #a6e3a1;
   border-radius: 0 10px 10px 0;
   margin-right: 5px;
-  border-left: 0px;
 }
 
 #custom-weather {

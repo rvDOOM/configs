@@ -42,4 +42,3 @@ lspconfig.eslint.setup{
   filetypes={"javascript"}
 }
 
-
